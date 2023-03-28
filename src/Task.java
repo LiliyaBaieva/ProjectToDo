@@ -9,17 +9,19 @@ public class Task {
   // Map <Status> (считывание статуса) - для того чтоб человек выбрал
   // readTask
   // добавить id
+  final static int ID = 0;
+  private final int id;
   private final LocalDate dateOfCreate;
   private String taskName;
   private String taskDescription;
   private boolean importance;
   private boolean urgent;
   private String status;
-  private int importanceInt;
 
 
-  public Task(LocalDateTime dateOfCreate, String taskName, String taskDescription,
+  public Task(int id, LocalDateTime dateOfCreate, String taskName, String taskDescription,
               boolean importance, boolean urgent, String status) {
+    this.id = (id + 1);
     this.dateOfCreate = LocalDate.from(dateOfCreate);
     this.taskName = taskName;
     this.taskDescription = taskDescription;
@@ -28,13 +30,18 @@ public class Task {
     this.urgent = false;
   }
 
-  public Task(LocalDate dateOfCreate, String taskName,
+  public Task(int id, LocalDate dateOfCreate, String taskName,
               boolean importance, boolean urgent, String status) {
+    this.id = (id + 1);
     this.dateOfCreate = dateOfCreate;
     this.taskName = taskName;
     this.status = status;
     this.importance = false;
     this.urgent = false;
+  }
+
+  public int getId() {
+    return id;
   }
 
   public LocalDate getDateOfCreate() {
@@ -84,6 +91,7 @@ public class Task {
   public Task TaskCreator() throws IOException {
 
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int id = (ID + 1);
 
     LocalDateTime dateOfCreate = LocalDateTime.now();
 
@@ -155,11 +163,7 @@ public class Task {
     } while (!c);
 
 
-    return new Task(dateOfCreate,
-        taskName,
-        taskDescription,
-        importance,
-        urgent,
-        status);
+    return new Task(id, dateOfCreate, taskName, taskDescription, importance, urgent, status);
   }
 }
+
