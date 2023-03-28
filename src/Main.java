@@ -11,14 +11,15 @@ public class Main {
    -удалить запись
    - Выйти
 
-  * Класс Task
+  * Класс Task _ НАДЯ
      // Map <Status> (считывание статуса) - для того чтоб человек выбрал
      // readTask
 
   * Comparator
     - TaskStatusComparator
     - TaskImportanceComparator
-    - TaskStatusComparator
+    - TaskUrgentComparator
+    - TaskDateNameComparator
 
   * Прочитать и записать в файл
 
