@@ -28,7 +28,7 @@ public class Menu {
 
     if (numMenu == 1) {
       System.out.println(" Здесь происходит добавление записи.");
-      Main.readToDoList();
+      Main.printToDoList();
     }
 
     if (numMenu == 2) {
