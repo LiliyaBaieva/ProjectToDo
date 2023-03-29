@@ -35,12 +35,8 @@ public class Main {
 
   }
 
-  public static void  printToDoList(){
-//    BufferedReader fileReader = new BufferedReader(new FileReader(toDoFile));
-//    List<Task> toDoList = new ArrayList<>();
-  }
-
-  public static void  addTaskInToDoFile(List toDoList) throws IOException{
+//
+  public static void  addTaskInToDoFile() throws IOException{
     File toDoFile = new File("res/toDoFile.txt");
 
     FileWriter fileWriter = new FileWriter("res/toDoFile.txt");
@@ -50,6 +46,11 @@ public class Main {
     Task task = Task.taskCreator();
     fileWriter.write(String.valueOf(task));
     fileWriter.close();
+  }
+
+  public static void  printToDoList(){
+//    BufferedReader fileReader = new BufferedReader(new FileReader(toDoFile));
+//    List<Task> toDoList = new ArrayList<>();
   }
 
 }
