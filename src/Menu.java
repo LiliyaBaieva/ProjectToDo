@@ -18,24 +18,51 @@ public class Menu {
   //   - Выйти
   public static void main(String[] args) throws IOException {
     System.out.println("\nMENU");
+
     List<String> menuMain = menuList();
+    int numMenu = readMenu(menuMain);
 
-
-    if ( readMenu(menuMain) == 1) {
-//      Task.TaskCreator();
+    if (numMenu == 1) {
+      System.out.println(" Здесь происходит добавление записи.");
+      Task.taskCreator();
     }
 
-    if ( readMenu(menuMain) == 3) {
-      System.out.println("Выберите критерий отбора: ");
-      menuListSmall();
-      System.out.printf("Введите номер от 1 до %d: ", menuMain.size());
+    if (numMenu == 2) {
+      System.out.println(" Здесь происходит изменение записи ");
     }
 
     // вывод подменю критериев отбора
-    if ( readMenu(menuMain) == 3) {
+    if (numMenu == 3) {
       System.out.println("Выберите критерий отбора: ");
-      menuListSmall();
-      System.out.printf("Введите номер от 1 до %d: ", menuMain.size());
+      int numSmallMenu = readMenu(menuListSmall());
+
+      if (numSmallMenu == 1) {
+        System.out.println(" Здесь выводим все записи ");
+      }
+
+      if (numSmallMenu == 2) {
+        System.out.println(" Здесь выводим записи To do (нужно сделать)");
+      }
+
+      if (numSmallMenu == 3) {
+        System.out.println(" Здесь выводим записи In progress (делаю) ");
+      }
+
+      if (numSmallMenu == 4) {
+        System.out.println(" Здесь выводим записи Done (сделано) ");
+      }
+
+      if (numSmallMenu == 5) {
+        System.out.println(" Возвращаемся в главное меню ");
+      }
+    }
+
+    if (numMenu == 4) {
+      System.out.println(" Здесь происходит удаление записи.");
+    }
+
+    if (numMenu == 5) {
+      System.out.println("Выходим. До свидания! Приятно было с Вами иметь дело!");
     }
   }
 
@@ -53,7 +80,7 @@ public class Menu {
     return menuMain;
   }
 
-   public static int readMenu(List<String> menuMain) throws IOException {
+  public static int readMenu(List<String> menuMain) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int menuNumber = 0;
     while (menuNumber < 1 || menuNumber > menuMain.size()) {
@@ -80,7 +107,4 @@ public class Menu {
     }
     return menuSmall;
   }
-
-
-
 }
