@@ -28,7 +28,7 @@ public class Menu {
 
     if (numMenu == 1) {
       System.out.println(" Здесь происходит добавление записи.");
-      Task.taskCreator();
+      Main.readToDoList();
     }
 
     if (numMenu == 2) {
