@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+  final public static String SEP = "; ";
+
   /*
    * Class Menu - Меню
    -добавить запись
@@ -44,6 +46,7 @@ public class Main {
       toDoFile.createNewFile();
     }
     Task task = Task.taskCreator();
+//    String.format()
     fileWriter.write(String.valueOf(task));
     fileWriter.close();
   }
