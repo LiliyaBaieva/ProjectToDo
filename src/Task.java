@@ -6,9 +6,6 @@ import java.time.LocalDateTime;
 
 public class Task {
 
-  // Map <Status> (считывание статуса) - для того чтоб человек выбрал
-  // readTask
-  // добавить id
   private final LocalDate dateOfCreate;
   private String taskName;
   private String taskDescription;
@@ -18,7 +15,7 @@ public class Task {
   private String status;
 
 
-  public Task(LocalDateTime dateOfCreate, String taskName, String taskDescription,
+  public Task(LocalDate dateOfCreate, String taskName, String taskDescription,
               Boolean importance, Boolean urgent, String status) {
     this.dateOfCreate = LocalDate.from(dateOfCreate);
     this.taskName = taskName;
@@ -88,7 +85,7 @@ public class Task {
 
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    LocalDateTime dateOfCreate = LocalDateTime.now();
+    LocalDate dateOfCreate = LocalDate.now();
 
     System.out.print("Введите название задачи: ");
     String taskName = br.readLine();
