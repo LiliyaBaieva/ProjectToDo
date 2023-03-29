@@ -56,13 +56,14 @@ public class Task {
     return taskDescription;
   }
 
-  public boolean isImportance() {
+  public boolean getImportance() {
     return importance;
   }
 
-  public boolean isUrgent() {
+  public boolean getUrgent() {
     return urgent;
   }
+
 
   public String getStatus() {
     return status;
@@ -101,7 +102,8 @@ public class Task {
     System.out.print("Введите описание задачи: ");
     String taskDescription = br.readLine();
 
-    System.out.printf("Введите: %n'1' если задача важная %n'2' если задача не важная%n");
+    System.out.printf("Введите: /n'1' если задача важная " +
+        "/n'2' если задача не важная/n");
     int importanceInt = Integer.parseInt(br.readLine());
     boolean a = false;
     boolean importance = false;
@@ -113,12 +115,14 @@ public class Task {
         if (importanceInt == 2) {
           a = true;
         } else {
-          System.out.println("Введите: %n'1' если задача важная %n'2' если задача не важная%n");
+          System.out.println("Введите: /n'1' если задача важная " +
+              "/n'2' если задача не важная/n");
         }
       }
     } while (!a);
 
-    System.out.printf("Введите: %n'1' если задача срочная %n'2' если задача не срочная%n");
+    System.out.printf("Введите: /n'1' если задача срочная " +
+        "/n'2' если задача не срочная/n");
     int urgentInt = Integer.parseInt(br.readLine());
     boolean b = false;
     boolean urgent = false;
@@ -130,14 +134,15 @@ public class Task {
         if (urgentInt == 2) {
           b = true;
         } else {
-          System.out.println("Введите: %n'1' если задача срочная %n'2' если задача не срочная%n");
+          System.out.println("Введите: /n'1' если задача срочная " +
+              "/n'2' если задача не срочная%n");
         }
       }
     } while (!b);
 
-    System.out.printf("Введите: %n'1' если задача не начата (status 'to do')" +
-        "%n'2' если задача выполняется (status 'in process')" +
-        "%n'3' если задача завершена (status 'done')%n");
+    System.out.printf("Введите: /n'1' если задача не начата (status 'to do')" +
+        "/n'2' если задача выполняется (status 'in process')" +
+        "/n'3' если задача завершена (status 'done')/n");
     int statusInt = Integer.parseInt(br.readLine());
     boolean c = false;
     String status = null;
@@ -154,14 +159,13 @@ public class Task {
             status = "done";
             c = true;
           } else {
-            System.out.println("Введите: %n'1' если задача не начата (status 'to do')" +
-                "%n'2' если задача выполняется (status 'in process')" +
-                "%n'3' если задача завершена (status 'done')");
+            System.out.println("Введите: /n'1' если задача не начата (status 'to do')" +
+                "/n'2' если задача выполняется (status 'in process')" +
+                "/n'3' если задача завершена (status 'done')/n");
           }
         }
       }
     } while (!c);
-
 
     return new Task(id, dateOfCreate, taskName, taskDescription, importance, urgent, status);
   }
