@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 public class Task {
 
@@ -177,6 +177,13 @@ public class Task {
     } while (!c);
 
     return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
+  }
+
+  @Override
+  public String toString() {
+    return "дата создания " + getDateOfCreate() + "задача " + getTaskName() +
+        "описание задачи" + getTaskDescription() + "важность " + getImportance() +
+        "срочность " + getUrgent() + "статус" + getStatus();
   }
 }
 
