@@ -46,7 +46,7 @@ public class Main {
       toDoFile.createNewFile();
     }
     Task task = Task.taskCreator();
-    String total = String.format(task.getDateOfCreate() + SEP + task.getTaskName() + SEP + task.getImportance() +
+    String total = String.format(task.getDateOfCreate() + SEP + task.getTaskName() + SEP + task.getTaskDescription() +SEP + task.getImportance() +
         SEP + task.getUrgent() + SEP + task.getStatus());
     fileWriter.write(String.valueOf(total));
     fileWriter.close();
