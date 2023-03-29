@@ -17,7 +17,11 @@ public class Menu {
   //   -удалить запись
   //   - Выйти
   public static void main(String[] args) throws IOException {
-    System.out.println("\nMENU");
+    menuStart();
+  }
+
+  public static void menuStart() throws IOException {
+//    System.out.println("\nMENU");
 
     List<String> menuMain = menuList();
     int numMenu = readMenu(menuMain);
@@ -54,6 +58,7 @@ public class Menu {
 
       if (numSmallMenu == 5) {
         System.out.println(" Возвращаемся в главное меню ");
+        menuStart();
       }
     }
 
@@ -67,6 +72,8 @@ public class Menu {
   }
 
   public static List<String> menuList() {
+    System.out.println("\nMENU");
+
     List<String> menuMain = new ArrayList<>();
     menuMain.add("Добавить запись.");
     menuMain.add("Изменить запись.");
