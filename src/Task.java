@@ -9,8 +9,6 @@ public class Task {
   // Map <Status> (считывание статуса) - для того чтоб человек выбрал
   // readTask
   // добавить id
-  final static int ID = 0;
-  private final int id;
   private final LocalDate dateOfCreate;
   private String taskName;
   private String taskDescription;
@@ -19,9 +17,8 @@ public class Task {
   private String status;
 
 
-  public Task(int id, LocalDateTime dateOfCreate, String taskName, String taskDescription,
+  public Task(LocalDateTime dateOfCreate, String taskName, String taskDescription,
               boolean importance, boolean urgent, String status) {
-    this.id = (id + 1);
     this.dateOfCreate = LocalDate.from(dateOfCreate);
     this.taskName = taskName;
     this.taskDescription = taskDescription;
@@ -30,18 +27,13 @@ public class Task {
     this.urgent = false;
   }
 
-  public Task(int id, LocalDate dateOfCreate, String taskName,
+  public Task(LocalDate dateOfCreate, String taskName,
               boolean importance, boolean urgent, String status) {
-    this.id = (id + 1);
     this.dateOfCreate = dateOfCreate;
     this.taskName = taskName;
     this.status = status;
     this.importance = false;
     this.urgent = false;
-  }
-
-  public int getId() {
-    return id;
   }
 
   public LocalDate getDateOfCreate() {
@@ -92,7 +84,6 @@ public class Task {
   public Task TaskCreator() throws IOException {
 
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    int id = (ID + 1);
 
     LocalDateTime dateOfCreate = LocalDateTime.now();
 
@@ -102,7 +93,7 @@ public class Task {
     System.out.print("Введите описание задачи: ");
     String taskDescription = br.readLine();
 
-    System.out.printf("Введите: /n'1' если задача важная " +
+    System.out.print("Введите: /n'1' если задача важная " +
         "/n'2' если задача не важная/n");
     int importanceInt = Integer.parseInt(br.readLine());
     boolean a = false;
@@ -121,7 +112,7 @@ public class Task {
       }
     } while (!a);
 
-    System.out.printf("Введите: /n'1' если задача срочная " +
+    System.out.print("Введите: /n'1' если задача срочная " +
         "/n'2' если задача не срочная/n");
     int urgentInt = Integer.parseInt(br.readLine());
     boolean b = false;
@@ -135,12 +126,12 @@ public class Task {
           b = true;
         } else {
           System.out.println("Введите: /n'1' если задача срочная " +
-              "/n'2' если задача не срочная%n");
+              "/n'2' если задача не срочная/n");
         }
       }
     } while (!b);
 
-    System.out.printf("Введите: /n'1' если задача не начата (status 'to do')" +
+    System.out.print("Введите: /n'1' если задача не начата (status 'to do')" +
         "/n'2' если задача выполняется (status 'in process')" +
         "/n'3' если задача завершена (status 'done')/n");
     int statusInt = Integer.parseInt(br.readLine());
@@ -159,7 +150,7 @@ public class Task {
             status = "done";
             c = true;
           } else {
-            System.out.println("Введите: /n'1' если задача не начата (status 'to do')" +
+            System.out.print("Введите: /n'1' если задача не начата (status 'to do')" +
                 "/n'2' если задача выполняется (status 'in process')" +
                 "/n'3' если задача завершена (status 'done')/n");
           }
@@ -167,7 +158,7 @@ public class Task {
       }
     } while (!c);
 
-    return new Task(id, dateOfCreate, taskName, taskDescription, importance, urgent, status);
+    return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
   }
 }
 
