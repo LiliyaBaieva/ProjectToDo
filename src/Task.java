@@ -14,8 +14,8 @@ public class Task {
   private String taskDescription;
   private Boolean importance;
   private Boolean urgent;
-  private String status;
 
+  private String status;
 
   public Task(LocalDateTime dateOfCreate, String taskName, String taskDescription,
               Boolean importance, Boolean urgent, String status) {
@@ -25,7 +25,9 @@ public class Task {
     this.status = status;
     this.importance = false;
     this.urgent = false;
+
   }
+
 
   public Task(LocalDate dateOfCreate, String taskName,
               Boolean importance, Boolean urgent, String status) {
@@ -81,7 +83,7 @@ public class Task {
     this.status = status;
   }
 
-  public Task TaskCreator() throws IOException {
+  public static Task taskCreator() throws IOException {
 
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -160,7 +162,5 @@ public class Task {
 
     return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
   }
-
-
 }
 
