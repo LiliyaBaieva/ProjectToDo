@@ -12,13 +12,13 @@ public class Task {
   private final LocalDate dateOfCreate;
   private String taskName;
   private String taskDescription;
-  private boolean importance;
-  private boolean urgent;
+  private Boolean importance;
+  private Boolean urgent;
   private String status;
 
 
   public Task(LocalDateTime dateOfCreate, String taskName, String taskDescription,
-              boolean importance, boolean urgent, String status) {
+              Boolean importance, Boolean urgent, String status) {
     this.dateOfCreate = LocalDate.from(dateOfCreate);
     this.taskName = taskName;
     this.taskDescription = taskDescription;
@@ -28,7 +28,7 @@ public class Task {
   }
 
   public Task(LocalDate dateOfCreate, String taskName,
-              boolean importance, boolean urgent, String status) {
+              Boolean importance, Boolean urgent, String status) {
     this.dateOfCreate = dateOfCreate;
     this.taskName = taskName;
     this.status = status;
@@ -48,11 +48,11 @@ public class Task {
     return taskDescription;
   }
 
-  public boolean getImportance() {
+  public Boolean getImportance() {
     return importance;
   }
 
-  public boolean getUrgent() {
+  public Boolean getUrgent() {
     return urgent;
   }
 
@@ -69,11 +69,11 @@ public class Task {
     this.taskDescription = taskDescription;
   }
 
-  public void setImportance(boolean importance) {
+  public void setImportance(Boolean importance) {
     this.importance = importance;
   }
 
-  public void setUrgent(boolean urgent) {
+  public void setUrgent(Boolean urgent) {
     this.urgent = urgent;
   }
 
@@ -97,7 +97,7 @@ public class Task {
         "/n'2' если задача не важная/n");
     int importanceInt = Integer.parseInt(br.readLine());
     boolean a = false;
-    boolean importance = false;
+    Boolean importance = false;
     do {
       if (importanceInt == 1) {
         importance = true;
@@ -116,7 +116,7 @@ public class Task {
         "/n'2' если задача не срочная/n");
     int urgentInt = Integer.parseInt(br.readLine());
     boolean b = false;
-    boolean urgent = false;
+    Boolean urgent = false;
     do {
       if (urgentInt == 1) {
         urgent = true;
@@ -160,5 +160,7 @@ public class Task {
 
     return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
   }
+
+
 }
 
