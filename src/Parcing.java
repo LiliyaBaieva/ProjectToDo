@@ -6,9 +6,9 @@ import java.util.*;
 
 public class Parcing {
 
-  public static void main(String[] args) throws IOException {
-    Parcing.parcing();
-  }
+//  public static void main(String[] args) throws IOException {
+//    Parcing.parcing();
+//  }
   final public static String SEP = "; ";
 
   public static List<Task> parcing() throws IOException {
