@@ -16,9 +16,9 @@ public class Menu {
 //      4. Done (сделано)
   //   -удалить запись
   //   - Выйти
-  public static void main(String[] args) throws IOException {
-    menuStart();
-  }
+//  public static void main(String[] args) throws IOException {
+//    menuStart();
+//  }
 
   public static void menuStart() throws IOException {
 //    System.out.println("\nMENU");
