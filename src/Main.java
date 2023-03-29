@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,21 +30,27 @@ public class Main {
   * TaskTest  ,  ComparatorTest
   */
   public static void main(String[] args) throws IOException {
+    // чтение файла
+    Menu.menuStart();
+
+  }
+
+  public static void  printToDoList(){
+//    BufferedReader fileReader = new BufferedReader(new FileReader(toDoFile));
+//    List<Task> toDoList = new ArrayList<>();
+  }
+
+  public static void  addTaskInToDoFile(List toDoList) throws IOException{
     File toDoFile = new File("res/toDoFile.txt");
+
+    FileWriter fileWriter = new FileWriter("res/toDoFile.txt");
     if(!toDoFile.exists()){
       toDoFile.createNewFile();
     }
-
-    // чтение файла
-    BufferedReader fileReader = new BufferedReader(new FileReader(toDoFile));
-    List<Task> toDoList = new ArrayList<>();
-
+    Task task = Task.taskCreator();
+    fileWriter.write(String.valueOf(task));
+    fileWriter.close();
   }
-
-  public static void  readToDoList(){
-  }
-
-  public static void  addTaskInToDoFile(){}
 
 }
 
