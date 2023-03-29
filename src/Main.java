@@ -1,3 +1,10 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
   /*
    * Class Menu - Меню
@@ -24,13 +31,28 @@ public class Main {
   * Прочитать и записать в файл
 
   * TaskTest  ,  ComparatorTest
-
   */
+  public static void main(String[] args) throws IOException {
+    File toDoFile = new File("res/toDoFile.txt");
+    if(!toDoFile.exists()){
+      toDoFile.createNewFile();
+    }
 
+    // чтение файла
+    BufferedReader fileReader = new BufferedReader(new FileReader(toDoFile));
+    List<Task> toDoList = new ArrayList<>();
 
-
-
-  public static void main(String[] args) {
-    System.out.println("Hello girls!");
   }
+
+  public static void  readToDoList(){
+  }
+
+  public static void  addTaskInToDoFile(){}
+
 }
+
+
+
+
+
+
