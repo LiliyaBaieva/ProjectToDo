@@ -49,8 +49,10 @@ public class Parcing {
       Task readedTask =  new Task(dateOfCreate, taskName, taskDescription, importance,
           urgent, status);
       listToDo.add(readedTask);
+
+      System.out.println(readedTask);
     }
-    System.out.println(listToDo);
+//    System.out.println(listToDo);
 
     br.close();
 
