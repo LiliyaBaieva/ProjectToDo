@@ -52,16 +52,18 @@ public class Task {
     return importance;
   }
 
-    public Boolean getUrgent() {
+  public Boolean getUrgent() {
     return urgent;
   }
-public String getUrgentString() {
-  String urgentString;
-  if (urgent = true) {
+
+  public String getUrgentString() {
+    String urgentString;
+    if (urgent = true) {
       urgentString = "срочная";
-  } urgentString = "не срочная";
+    }
+    urgentString = "не срочная";
     return urgentString;
-}
+  }
 
   public String getImportanceString() {
     String importanceString;
@@ -113,50 +115,64 @@ public String getUrgentString() {
         '1' если задача важная\s
         '2' если задача не важная
         """);
-    int importanceInt = Integer.parseInt(br.readLine());
+    int importanceInt = 0;
     boolean a = false;
     boolean importance = false;
-    do {
-      if (importanceInt == 1) {
-        importance = true;
-        a = true;
-      } else {
-        if (importanceInt == 2) {
+    try {
+      importanceInt = Integer.parseInt(br.readLine());
+    } catch (NumberFormatException e) {
+      System.err.println("Неправильный формат числа: " + e.getMessage());
+    }
+      do {
+        if (importanceInt == 1) {
+          importance = true;
           a = true;
         } else {
-          System.out.println("""
-              Введите:\s
-              '1' если задача важная\s
-              '2' если задача не важная
-              """);
+          if (importanceInt == 2) {
+            a = true;
+          } else {
+            System.out.println("""
+                Введите:\s
+                '1' если задача важная\s
+                '2' если задача не важная
+                """);
+            importanceInt = Integer.parseInt(br.readLine());
+          }
         }
-      }
-    } while (!a);
+      } while (!a);
+
 
     System.out.print("""
         Введите:\s
         '1' если задача срочная\s
         '2' если задача не срочная
         """);
-    int urgentInt = Integer.parseInt(br.readLine());
+    int urgentInt = 0;
     boolean b = false;
     boolean urgent = false;
-    do {
-      if (urgentInt == 1) {
-        urgent = true;
-        b = true;
-      } else {
-        if (urgentInt == 2) {
+    try {
+      urgentInt = Integer.parseInt(br.readLine());
+    } catch (NumberFormatException e) {
+      System.err.println("Неправильный формат числа: " + e.getMessage());
+    }
+      do {
+        if (urgentInt == 1) {
+          urgent = true;
           b = true;
         } else {
-          System.out.println("""
-              Введите:\s
-              '1' если задача срочная\s
-              '2' если задача не срочная
-              """);
+          if (urgentInt == 2) {
+            b = true;
+          } else {
+            System.out.println("""
+                Введите:\s
+                '1' если задача срочная\s
+                '2' если задача не срочная
+                """);
+            urgentInt = Integer.parseInt(br.readLine());
+          }
         }
-      }
-    } while (!b);
+      } while (!b);
+
 
     System.out.print("""
         Введите:\s
@@ -164,9 +180,15 @@ public String getUrgentString() {
         '2' если задача выполняется (status 'in process')
         '3' если задача завершена (status 'done')
         """);
-    int statusInt = Integer.parseInt(br.readLine());
+
+    int statusInt = 0;
     boolean c = false;
     String status = null;
+    try {
+      statusInt = Integer.parseInt(br.readLine());
+    } catch (NumberFormatException e) {
+      System.err.println("Неправильный формат числа: " + e.getMessage());
+    }
     do {
       if (statusInt == 1) {
         status = "to do";
@@ -186,22 +208,25 @@ public String getUrgentString() {
                 '2' если задача выполняется (status 'in process')
                 '3' если задача завершена (status 'done')
                 """);
+            statusInt = Integer.parseInt(br.readLine());
           }
         }
       }
     } while (!c);
 
+
     return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
+
   }
 
 
   @Override
   public String toString() {
-    return "Task{" + "dateOfCreate= " + getDateOfCreate() +
-        "taskName= " + getTaskName() +
-        "taskDescription= " + getTaskDescription() +
-        "importanceString= " + getImportanceString() +
-        "urgentString= " + getUrgentString() +
+    return "Task{" + "dateOfCreate= " + getDateOfCreate() + " " +
+        "taskName= " + getTaskName() + " " +
+        "taskDescription= " + getTaskDescription() + " " +
+        "importanceString= " + getImportanceString() + " " +
+        "urgentString= " + getUrgentString() + " " +
         "status= " + getStatus() +
         "}" + "\n";
   }
