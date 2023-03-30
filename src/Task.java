@@ -203,7 +203,7 @@ public String getUrgentString() {
         "importanceString= " + getImportanceString() +
         "urgentString= " + getUrgentString() +
         "status= " + getStatus() +
-        "}";
+        "}" + "\n";
   }
 }
 
