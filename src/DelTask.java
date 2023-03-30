@@ -11,6 +11,7 @@ public class DelTask {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     List<Task> toDoList = new ArrayList<>(Parser.parser());
+//    List<Task> toDoList = Parser.parser();
 
     for (int i = 0; i < toDoList.size(); ++i) {
       System.out.println(((i + 1) + ". " + toDoList.get(i)));
@@ -34,7 +35,10 @@ public class DelTask {
     }
 
     for (int i = 0; i < toDoList.size(); ++i) {
-      fileWriter.write(String.valueOf(toDoList.get(i)));
+      Task task = toDoList.get(i);
+      String total = String.format(task.getDateOfCreate() + SEP + task.getTaskName() + SEP + task.getTaskDescription() +SEP + task.getImportance() +
+          SEP + task.getUrgent() + SEP + task.getStatus()) + "\n";
+      fileWriter.write(String.valueOf(total));
     }
 
     fileWriter.close();
