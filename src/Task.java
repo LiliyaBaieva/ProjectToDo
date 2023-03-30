@@ -63,6 +63,15 @@ public String getUrgentString() {
     return urgentString;
 }
 
+  public String getImportanceString() {
+    String importanceString;
+    if (importance = true) {
+      importanceString = "срочная";
+    }
+    importanceString = "не срочная";
+    return importanceString;
+  }
+
   public String getStatus() {
     return status;
   }
@@ -191,8 +200,8 @@ public String getUrgentString() {
     return "Task{" + "dateOfCreate= " + getDateOfCreate() +
         "taskName= " + getTaskName() +
         "taskDescription= " + getTaskDescription() +
-        "importance= " + getImportance() +
-        "urgent= " + getUrgent() +
+        "importanceString= " + getImportanceString() +
+        "urgentString= " + getUrgentString() +
         "status= " + getStatus() +
         "}";
   }
