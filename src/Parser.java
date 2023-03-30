@@ -7,7 +7,7 @@ import java.util.*;
 public class Parser {
 
 //  public static void main(String[] args) throws IOException {
-//    Parcing.parcing();
+//    Parser.parcing();
 //  }
   final public static String SEP = "; ";
 
@@ -19,15 +19,7 @@ public class Parser {
     for (String line = br.readLine(); line != null; line = br.readLine()) {
       int lastSep = line.indexOf(SEP);
 
-//      String line1 = line.substring(0, lastSep);
-//      System.out.println("line1  " + line1);
-//      Long line2 = Long.parseLong(line1);
-//      System.out.println("line2  " + line2);
-//      LocalDate dateOfCreate = LocalDate.ofEpochDay(line2);
-//      System.out.println("dateOfCreate  " + dateOfCreate);
-
-//      LocalDate dateOfCreate = LocalDate.ofEpochDay(Long.parseLong(line.substring(0, lastSep)));
-      LocalDate dateOfCreate = LocalDate.ofEpochDay(2018-11-11);
+      LocalDate dateOfCreate = LocalDate.parse(line.substring(0, lastSep));
       line = line.substring(lastSep + 2);
       lastSep = line.indexOf(SEP);
 
