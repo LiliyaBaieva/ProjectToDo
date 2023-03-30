@@ -68,17 +68,29 @@ public class ToDoList {
         System.out.println(task);
       }
     }
+    Menu.menuStart();
   }
 
-// todo печать только срочных
-  public static void printUrgentTask(){
-//    Parser.parser().sort(new TaskDateNameComparator());
-
+// печать только срочных
+  public static void printUrgentTask() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
+    for(Task task : Parser.parser()){
+      if(task.getUrgent().booleanValue() == true){
+        System.out.println(task);
+      }
+    }
+    Menu.menuStart();
   };
 
-// todo печать только важных
-  public static void printImportanceTask(){
-//    Parser.parser().sort(new TaskDateNameComparator());
+// печать только важных
+  public static void printImportanceTask() throws IOException {
+    Parser.parser().sort(new TaskDateNameComparator());
+    for(Task task : Parser.parser()){
+      if(task.getImportance().booleanValue() == true){
+        System.out.println(task);
+      }
+    }
+    Menu.menuStart();
   };
 
 
