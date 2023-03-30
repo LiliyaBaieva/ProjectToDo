@@ -29,7 +29,7 @@ public class Menu {
 
     if (numMenu == 1) {
 //      System.out.println(" Здесь происходит добавление записи."); // готово
-      Main.addTaskInToDoFile();
+      ToDoList.addTaskInToDoFile();
     }
 
     if (numMenu == 2) {
@@ -43,7 +43,7 @@ public class Menu {
 
       if (numSmallMenu == 1) {
         System.out.println("Все Ваши дела: ");  // готово
-        Main.printToDoList();
+        ToDoList.printToDoList();
       }
 
       if (numSmallMenu == 2) {
