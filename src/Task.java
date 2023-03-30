@@ -17,7 +17,7 @@ public class Task {
 
   public Task(LocalDate dateOfCreate, String taskName, String taskDescription,
               Boolean importance, Boolean urgent, String status) {
-    this.dateOfCreate = LocalDate.from(dateOfCreate);
+    this.dateOfCreate = dateOfCreate;
     this.taskName = taskName;
     this.taskDescription = taskDescription;
     this.status = status;
