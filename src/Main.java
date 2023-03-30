@@ -1,6 +1,4 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -32,9 +30,7 @@ public class Main {
   * TaskTest  ,  ComparatorTest
   */
   public static void main(String[] args) throws IOException {
-
-    Menu.menuStart();
-
+      Menu.menuStart();
   }
 
 }

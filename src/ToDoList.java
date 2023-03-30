@@ -17,6 +17,14 @@ public class ToDoList {
         SEP + task.getUrgent() + SEP + task.getStatus());
     fileWriter.write(String.valueOf(total));
     fileWriter.close();
+
+    System.out.println("Нажмите 1 для добавление ещё одной записи и 2 для выхода в меню");
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int vybor = Integer.parseInt(br.readLine());
+    if (vybor == 1) {
+      addTaskInToDoFile();
+    }
+    Menu.menuStart();
   }
 
 
