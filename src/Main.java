@@ -55,9 +55,10 @@ public class Main {
     fileWriter.close();
   }
 
+  // вывод на экран сортировка по умолчанию: дата, время
   public static void  printToDoList() throws IOException {
 
-
+    Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
        System.out.println(task);
      }
