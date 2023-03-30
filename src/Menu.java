@@ -28,45 +28,58 @@ public class Menu {
     int numMenu = readMenu(menuMain);
 
     if (numMenu == 1) {
-//      System.out.println(" Здесь происходит добавление записи."); // готово
+      System.out.println("Добавление записи."); // готово
       ToDoList.addTaskInToDoFile();
     }
 
     if (numMenu == 2) {
-      System.out.println(" Здесь происходит изменение записи ");
+      System.out.println("Здесь происходит изменение записи ");
     }
 
     // вывод подменю критериев отбора
     if (numMenu == 3) {
-      System.out.println("Выберите критерий отбора: ");
+      System.out.println("Выберите критерий отбора:");
       int numSmallMenu = readMenu(menuListSmall());
 
       if (numSmallMenu == 1) {
-        System.out.println("Все Ваши дела: ");  // готово
+        System.out.println("Все Ваши дела:");              // готово
         ToDoList.printToDoList();
       }
 
       if (numSmallMenu == 2) {
-        System.out.println("Здесь выводим записи To do (нужно сделать)");
+        System.out.println("Записи To do (нужно сделать):");  // готово
+        ToDoList.printWithStatusToDo();
       }
 
       if (numSmallMenu == 3) {
-        System.out.println("Здесь выводим записи In progress (делаю) ");
+        System.out.println("Ззаписи In progress (делаю):");  // готово
+        ToDoList.printWithStatusInProcess();
       }
 
       if (numSmallMenu == 4) {
-        System.out.println("Здесь выводим записи Done (сделано) ");
+        System.out.println("Записи Done (сделано):");       // готово
+        ToDoList.printWithStatusDone();
       }
 
       if (numSmallMenu == 5) {
-        System.out.println("Возвращаемся в главное меню ");
+        System.out.println("Записи ВАЖНЫЕ:");  // готово
+        ToDoList.printImportanceTask();
+      }
+
+      if (numSmallMenu == 6) {
+        System.out.println("Записи СРОЧНЫЕ:");  // готово
+        ToDoList.printUrgentTask();
+      }
+
+      if (numSmallMenu == 7) {
+        System.out.println("Возвращаемся в главное меню.");  // готово
         menuStart();
       }
     }
 
     if (numMenu == 4) {
-            System.out.println("Здесь происходит удаление записи.");
-      DelTask.delTaskInToDoFile();
+            System.out.println("Удаление записи.");           // готово
+      ToDoList.delTaskInToDoFile();
     }
 
     if (numMenu == 5) {
@@ -110,6 +123,8 @@ public class Menu {
     menuSmall.add("Выполняются.");
     menuSmall.add("Ожидают выполнения.");
     menuSmall.add("Сделаны.");
+    menuSmall.add("Важные.");
+    menuSmall.add("Срочные.");
     menuSmall.add("Вернуться в главное меню.");
 
     for (int i = 0; i < menuSmall.size(); ++i) {

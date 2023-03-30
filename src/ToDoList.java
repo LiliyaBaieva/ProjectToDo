@@ -8,15 +8,23 @@ public class ToDoList {
   public static void  addTaskInToDoFile() throws IOException {
     File toDoFile = new File("res/toDoFile.txt");
 
-    FileWriter fileWriter = new FileWriter("res/toDoFile.txt");
+    FileWriter fileWriter = new FileWriter("res/toDoFile.txt", true);
     if(!toDoFile.exists()){
       toDoFile.createNewFile();
     }
     Task task = Task.taskCreator();
     String total = String.format(task.getDateOfCreate() + SEP + task.getTaskName() + SEP + task.getTaskDescription() +SEP + task.getImportance() +
-        SEP + task.getUrgent() + SEP + task.getStatus());
+        SEP + task.getUrgent() + SEP + task.getStatus() + "\n");
     fileWriter.write(String.valueOf(total));
     fileWriter.close();
+
+    System.out.println("Нажмите 1 для добавление ещё одной записи и 2 для выхода в меню");
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int vybor = Integer.parseInt(br.readLine());
+    if (vybor == 1) {
+      addTaskInToDoFile();
+    }
+    Menu.menuStart();
   }
 
 
@@ -27,34 +35,64 @@ public class ToDoList {
     for(Task task : Parser.parser()){
       System.out.println(task);
     }
+    Menu.menuStart();
   }
 
 // вывод только to do
   public static void printWithStatusToDo() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
       if(task.getStatus().equals("to do")){
         System.out.println(task);
       }
     }
+    Menu.menuStart();
   }
 
 // вывод только in process
   public static void printWithStatusInProcess() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
       if(task.getStatus().equals("in process")){
         System.out.println(task);
       }
     }
+    Menu.menuStart();
   }
 
 // вывод только done
   public static void printWithStatusDone() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
       if(task.getStatus().equals("done")){
         System.out.println(task);
       }
     }
+    Menu.menuStart();
   }
+
+// печать только срочных
+  public static void printUrgentTask() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
+    for(Task task : Parser.parser()){
+      if(task.getUrgent().booleanValue() == true){
+        System.out.println(task);
+      }
+    }
+    Menu.menuStart();
+  };
+
+// печать только важных
+  public static void printImportanceTask() throws IOException {
+    Parser.parser().sort(new TaskDateNameComparator());
+    for(Task task : Parser.parser()){
+      if(task.getImportance().booleanValue() == true){
+        System.out.println(task);
+      }
+    }
+    Menu.menuStart();
+  };
+
 
 
 //  public static void print
