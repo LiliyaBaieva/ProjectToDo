@@ -52,10 +52,16 @@ public class Task {
     return importance;
   }
 
-  public Boolean getUrgent() {
+    public Boolean getUrgent() {
     return urgent;
   }
-
+public String getUrgentString() {
+  String urgentString;
+  if (urgent = true) {
+      urgentString = "срочная";
+  } urgentString = "не срочная";
+    return urgentString;
+}
 
   public String getStatus() {
     return status;
@@ -179,11 +185,16 @@ public class Task {
     return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
   }
 
+
   @Override
   public String toString() {
-    return "дата создания " + getDateOfCreate() + "задача " + getTaskName() +
-        "описание задачи" + getTaskDescription() + "важность " + getImportance() +
-        "срочность " + getUrgent() + "статус" + getStatus();
+    return "Task{" + "dateOfCreate= " + getDateOfCreate() +
+        "taskName= " + getTaskName() +
+        "taskDescription= " + getTaskDescription() +
+        "importance= " + getImportance() +
+        "urgent= " + getUrgent() +
+        "status= " + getStatus() +
+        "}";
   }
 }
 
