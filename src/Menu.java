@@ -4,25 +4,19 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Menu {
   /* Class Menu - Меню
   //   -добавить запись
   //   -изменить запись
   //   -вывести задачи на экран
-//      1. все задачи
-//      2. To do (нужно сделать)
-//      3. In progress (делаю)
-//      4. Done (сделано)
+    //      1. все задачи
+    //      2. To do (нужно сделать)
+    //      3. In progress (делаю)
+    //      4. Done (сделано)
   //   -удалить запись
   //   - Выйти */
 
-//  public static void main(String[] args) throws IOException {
-//    menuStart();
-//  }
-
   public static void menuStart() throws IOException {
-//    System.out.println("\nMENU");
 
     List<String> menuMain = menuList();
     int numMenu = readMenu(menuMain);
@@ -34,6 +28,7 @@ public class Menu {
 
     if (numMenu == 2) {
       System.out.println("Здесь происходит изменение записи ");
+      ToDoList.taskChange();
     }
 
     // вывод подменю критериев отбора
