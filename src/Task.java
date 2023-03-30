@@ -58,7 +58,7 @@ public class Task {
 
   public String getUrgentString() {
     String urgentString;
-    if (urgent = true) {
+    if (urgent == true) {
       urgentString = "срочная";
     } else {
       urgentString = "не срочная";
@@ -68,7 +68,7 @@ public class Task {
 
   public String getImportanceString() {
     String importanceString;
-    if (importance = true) {
+    if (importance == true) {
       importanceString = "важная";
     } else {
       importanceString = "не важная";
