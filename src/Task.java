@@ -58,7 +58,7 @@ public class Task {
 
   public String getUrgentString() {
     String urgentString;
-    if (urgent == true) {
+    if (getUrgent()) {
       urgentString = "срочная";
     } else {
       urgentString = "не срочная";
@@ -68,7 +68,7 @@ public class Task {
 
   public String getImportanceString() {
     String importanceString;
-    if (importance == true) {
+    if (getImportance()) {
       importanceString = "важная";
     } else {
       importanceString = "не важная";
@@ -224,12 +224,12 @@ public class Task {
 
   @Override
   public String toString() {
-    return "Task{" + "dateOfCreate= " + getDateOfCreate() + " " +
-        "taskName= " + getTaskName() + " " +
-        "taskDescription= " + getTaskDescription() + " " +
-        "importanceString= " + getImportanceString() + " " +
-        "urgentString= " + getUrgentString() + " " +
-        "status= " + getStatus() +
+    return "Task{" +  getDateOfCreate() + " : " +
+        getTaskName() + " (" +
+        getTaskDescription() + ") , " +
+        getImportanceString() + ", " +
+        getUrgentString() + ", " +
+        getStatus() +
         "}" + "\n";
   }
 }
