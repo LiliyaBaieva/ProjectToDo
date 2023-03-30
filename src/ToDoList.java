@@ -29,6 +29,33 @@ public class ToDoList {
     }
   }
 
+// вывод только to do
+  public static void printWithStatusToDo() throws IOException{
+    for(Task task : Parser.parser()){
+      if(task.getStatus().equals("to do")){
+        System.out.println(task);
+      }
+    }
+  }
+
+// вывод только in process
+  public static void printWithStatusInProcess() throws IOException{
+    for(Task task : Parser.parser()){
+      if(task.getStatus().equals("in process")){
+        System.out.println(task);
+      }
+    }
+  }
+
+// вывод только done
+  public static void printWithStatusDone() throws IOException{
+    for(Task task : Parser.parser()){
+      if(task.getStatus().equals("done")){
+        System.out.println(task);
+      }
+    }
+  }
+
 
 //  public static void print
 
