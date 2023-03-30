@@ -64,6 +64,13 @@ public class ToDoList {
     }
   }
 
+// todo печать только срочных
+  public static void printUrgentTask(){};
+
+// todo печать только важных
+  public static void printImportanceTask(){};
+
+
 
 //  public static void print
 
