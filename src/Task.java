@@ -60,17 +60,19 @@ public class Task {
     String urgentString;
     if (urgent = true) {
       urgentString = "срочная";
+    } else {
+      urgentString = "не срочная";
     }
-    urgentString = "не срочная";
     return urgentString;
   }
 
   public String getImportanceString() {
     String importanceString;
     if (importance = true) {
-      importanceString = "срочная";
+      importanceString = "важная";
+    } else {
+      importanceString = "не важная";
     }
-    importanceString = "не срочная";
     return importanceString;
   }
 
@@ -214,9 +216,9 @@ public class Task {
       }
     } while (!c);
 
-
+    Task task = new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
+    System.out.printf("Вы создали новую запись:" + task);
     return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
-
   }
 
 
