@@ -8,7 +8,7 @@ public class ToDoList {
   public static void  addTaskInToDoFile() throws IOException {
     File toDoFile = new File("res/toDoFile.txt");
 
-    FileWriter fileWriter = new FileWriter("res/toDoFile.txt");
+    FileWriter fileWriter = new FileWriter("res/toDoFile.txt", true);
     if(!toDoFile.exists()){
       toDoFile.createNewFile();
     }
@@ -39,6 +39,7 @@ public class ToDoList {
 
 // вывод только to do
   public static void printWithStatusToDo() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
       if(task.getStatus().equals("to do")){
         System.out.println(task);
@@ -48,6 +49,7 @@ public class ToDoList {
 
 // вывод только in process
   public static void printWithStatusInProcess() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
       if(task.getStatus().equals("in process")){
         System.out.println(task);
@@ -57,6 +59,7 @@ public class ToDoList {
 
 // вывод только done
   public static void printWithStatusDone() throws IOException{
+    Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
       if(task.getStatus().equals("done")){
         System.out.println(task);
@@ -65,10 +68,15 @@ public class ToDoList {
   }
 
 // todo печать только срочных
-  public static void printUrgentTask(){};
+  public static void printUrgentTask(){
+//    Parser.parser().sort(new TaskDateNameComparator());
+
+  };
 
 // todo печать только важных
-  public static void printImportanceTask(){};
+  public static void printImportanceTask(){
+//    Parser.parser().sort(new TaskDateNameComparator());
+  };
 
 
 
