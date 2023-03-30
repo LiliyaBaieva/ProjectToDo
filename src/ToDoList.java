@@ -14,7 +14,7 @@ public class ToDoList {
     }
     Task task = Task.taskCreator();
     String total = String.format(task.getDateOfCreate() + SEP + task.getTaskName() + SEP + task.getTaskDescription() +SEP + task.getImportance() +
-        SEP + task.getUrgent() + SEP + task.getStatus());
+        SEP + task.getUrgent() + SEP + task.getStatus() + "\n");
     fileWriter.write(String.valueOf(total));
     fileWriter.close();
 
@@ -35,6 +35,7 @@ public class ToDoList {
     for(Task task : Parser.parser()){
       System.out.println(task);
     }
+    Menu.menuStart();
   }
 
 // вывод только to do
@@ -45,6 +46,7 @@ public class ToDoList {
         System.out.println(task);
       }
     }
+    Menu.menuStart();
   }
 
 // вывод только in process
@@ -55,6 +57,7 @@ public class ToDoList {
         System.out.println(task);
       }
     }
+    Menu.menuStart();
   }
 
 // вывод только done
