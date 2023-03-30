@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public class Menu {
-  //* Class Menu - Меню
+  /* Class Menu - Меню
   //   -добавить запись
   //   -изменить запись
   //   -вывести задачи на экран
@@ -15,7 +15,8 @@ public class Menu {
 //      3. In progress (делаю)
 //      4. Done (сделано)
   //   -удалить запись
-  //   - Выйти
+  //   - Выйти */
+
 //  public static void main(String[] args) throws IOException {
 //    menuStart();
 //  }
@@ -27,7 +28,7 @@ public class Menu {
     int numMenu = readMenu(menuMain);
 
     if (numMenu == 1) {
-      System.out.println(" Здесь происходит добавление записи.");
+//      System.out.println(" Здесь происходит добавление записи."); // готово
       Main.addTaskInToDoFile();
     }
 
@@ -41,29 +42,31 @@ public class Menu {
       int numSmallMenu = readMenu(menuListSmall());
 
       if (numSmallMenu == 1) {
-        System.out.println(" Здесь выводим все записи ");
+        System.out.println("Все Ваши дела: ");  // готово
+        Main.printToDoList();
       }
 
       if (numSmallMenu == 2) {
-        System.out.println(" Здесь выводим записи To do (нужно сделать)");
+        System.out.println("Здесь выводим записи To do (нужно сделать)");
       }
 
       if (numSmallMenu == 3) {
-        System.out.println(" Здесь выводим записи In progress (делаю) ");
+        System.out.println("Здесь выводим записи In progress (делаю) ");
       }
 
       if (numSmallMenu == 4) {
-        System.out.println(" Здесь выводим записи Done (сделано) ");
+        System.out.println("Здесь выводим записи Done (сделано) ");
       }
 
       if (numSmallMenu == 5) {
-        System.out.println(" Возвращаемся в главное меню ");
+        System.out.println("Возвращаемся в главное меню ");
         menuStart();
       }
     }
 
     if (numMenu == 4) {
-      System.out.println(" Здесь происходит удаление записи.");
+            System.out.println("Здесь происходит удаление записи.");
+      DelTask.delTaskInToDoFile();
     }
 
     if (numMenu == 5) {
@@ -95,7 +98,7 @@ public class Menu {
       try {
         menuNumber = Integer.parseInt(br.readLine());
       } catch (NumberFormatException e) {
-        System.err.println("Неправильный формат числа: " + e.getMessage());
+        System.err.println("\nНеправильный формат числа: " + e.getMessage());
       }
     }
     return menuNumber;
