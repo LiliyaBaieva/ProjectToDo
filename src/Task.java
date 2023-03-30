@@ -21,20 +21,13 @@ public class Task {
     this.taskName = taskName;
     this.taskDescription = taskDescription;
     this.status = status;
-    this.importance = false;
-    this.urgent = false;
+    this.importance = importance;
+    this.urgent = urgent;
 
   }
 
 
-  public Task(LocalDate dateOfCreate, String taskName,
-              Boolean importance, Boolean urgent, String status) {
-    this.dateOfCreate = dateOfCreate;
-    this.taskName = taskName;
-    this.status = status;
-    this.importance = false;
-    this.urgent = false;
-  }
+
 
   public LocalDate getDateOfCreate() {
     return dateOfCreate;
