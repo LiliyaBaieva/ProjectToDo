@@ -217,13 +217,12 @@ public class Task {
 
   @Override
   public String toString() {
-    return "Task{" +  getDateOfCreate() + " : " +
+    return getDateOfCreate() + " : " +
         getTaskName() + " (" +
-        getTaskDescription() + ") , " +
+        getTaskDescription() + "), " +
         getImportanceString() + ", " +
         getUrgentString() + ", " +
-        getStatus() +
-        "}" + "\n";
+        getStatus() + "\n";
   }
 }
 
