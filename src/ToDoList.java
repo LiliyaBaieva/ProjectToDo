@@ -72,10 +72,20 @@ public class ToDoList {
   }
 
 // печать только срочных
+//  public static void printUrgentTask() throws IOException{
+//    Parser.parser().sort(new TaskDateNameComparator());
+//    for(Task task : Parser.parser()){
+//      if(task.getUrgent()){
+//        System.out.println(task);
+//      }
+//    }
+//    Menu.menuStart();
+//  };
+
   public static void printUrgentTask() throws IOException{
     Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
-      if(task.getUrgent().booleanValue() == true){
+      if(task.getUrgent() == true){
         System.out.println(task);
       }
     }
@@ -86,7 +96,7 @@ public class ToDoList {
   public static void printImportanceTask() throws IOException {
     Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
-      if(task.getImportance().booleanValue() == true){
+      if(task.getImportance() == true){
         System.out.println(task);
       }
     }
