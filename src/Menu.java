@@ -42,31 +42,34 @@ public class Menu {
       int numSmallMenu = readMenu(menuListSmall());
 
       if (numSmallMenu == 1) {
-        System.out.println("Все Ваши дела: ");  // готово
+        System.out.println("Все Ваши дела: ");              // готово
         ToDoList.printToDoList();
       }
 
       if (numSmallMenu == 2) {
-        System.out.println("Здесь выводим записи To do (нужно сделать)");
+        System.out.println("Записи To do (нужно сделать)");  // готово
+        ToDoList.printWithStatusToDo();
       }
 
       if (numSmallMenu == 3) {
-        System.out.println("Здесь выводим записи In progress (делаю) ");
+        System.out.println("Ззаписи In progress (делаю) ");  // готово
+        ToDoList.printWithStatusInProcess();
       }
 
       if (numSmallMenu == 4) {
-        System.out.println("Здесь выводим записи Done (сделано) ");
+        System.out.println("Записи Done (сделано) ");       // готово
+        ToDoList.printWithStatusDone();
       }
 
       if (numSmallMenu == 5) {
-        System.out.println("Возвращаемся в главное меню ");
+        System.out.println("Возвращаемся в главное меню ");  // готово
         menuStart();
       }
     }
 
     if (numMenu == 4) {
-            System.out.println("Здесь происходит удаление записи.");
-      DelTask.delTaskInToDoFile();
+            System.out.println("Удаление записи.");           // готово
+      ToDoList.delTaskInToDoFile();
     }
 
     if (numMenu == 5) {
