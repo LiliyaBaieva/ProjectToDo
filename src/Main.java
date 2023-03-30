@@ -33,7 +33,10 @@ public class Main {
   */
   public static void main(String[] args) throws IOException {
     // чтение файла
+//    while (Menu.numMenu != 5){
+//    }
     Menu.menuStart();
+
 
   }
 
@@ -52,9 +55,12 @@ public class Main {
     fileWriter.close();
   }
 
-  public static void  printToDoList(){
-//    BufferedReader fileReader = new BufferedReader(new FileReader(toDoFile));
-//    List<Task> toDoList = new ArrayList<>();
+  public static void  printToDoList() throws IOException {
+
+
+    for(Task task : Parser.parser()){
+       System.out.println(task);
+     }
   }
 
 }
