@@ -71,17 +71,6 @@ public class ToDoList {
     Menu.menuStart();
   }
 
-// печать только срочных
-//  public static void printUrgentTask() throws IOException{
-//    Parser.parser().sort(new TaskDateNameComparator());
-//    for(Task task : Parser.parser()){
-//      if(task.getUrgent()){
-//        System.out.println(task);
-//      }
-//    }
-//    Menu.menuStart();
-//  };
-
   public static void printUrgentTask() throws IOException{
     Parser.parser().sort(new TaskDateNameComparator());
     for(Task task : Parser.parser()){
