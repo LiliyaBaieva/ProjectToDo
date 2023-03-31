@@ -188,104 +188,17 @@ public class ToDoList {
       } else if (partChangeTask == 3) {
         change = true;
         importanceChange( toDoList,indexChangeTask);
-            /*System.out.print("""
-                Введите:\s
-                '1' если задача важная\s
-                '2' если задача не важная
-                """);
-            int importanceInt = 0;
-            boolean a = false;
-            try {
-              importanceInt = Integer.parseInt(br.readLine());
-            } catch (NumberFormatException e) {
-              System.err.println("Неправильный формат числа: " + e.getMessage());
-            }
-            do {
-              if (importanceInt == 1) {
-                toDoList.get(indexChangeTask - 1).setImportance(true);
-                a = true;
-              } else if (importanceInt == 2) {
-                  toDoList.get(indexChangeTask - 1).setImportance(false);
-                  a = true;
-                } else {
-                  System.out.println("""
-                      Введите:\s
-                      '1' если задача важная\s
-                      '2' если задача не важная
-                      """);
-                  importanceInt = Integer.parseInt(br.readLine());
-                }
-            } while (!a);*/
+
 
       } else if (partChangeTask == 4) {
         change = true;
         urgentChance(toDoList, indexChangeTask);
-              /*System.out.print("""
-                  Введите:\s
-                  '1' если задача срочная\s
-                  '2' если задача не срочная
-                  """);
-              int urgentInt = 0;
-              boolean b = false;
-              try {
-                urgentInt = Integer.parseInt(br.readLine());
-              } catch (NumberFormatException e) {
-                System.err.println("Неправильный формат числа: " + e.getMessage());
-              }
-              do {
-                if (urgentInt == 1) {
-                  toDoList.get(indexChangeTask - 1).setUrgent(true);
-                  b = true;
-                } else if (urgentInt == 2) {
-                    toDoList.get(indexChangeTask - 1).setUrgent(false);
-                    b = true;
-                  } else {
-                    System.out.println("""
-                        Введите:\s
-                        '1' если задача срочная\s
-                        '2' если задача не срочная
-                        """);
-                    urgentInt = Integer.parseInt(br.readLine());
-                  }
-              } while (!b);*/
+
 
       } else if (partChangeTask == 5) {
         change = true;
         statusChange(toDoList, indexChangeTask);
-                /*System.out.print("""
-                    Введите:\s
-                    '1' если задача не начата (status 'to do')
-                    '2' если задача выполняется (status 'in process')
-                    '3' если задача завершена (status 'done')
-                    """);
 
-                int statusInt = 0;
-                boolean c = false;
-                try {
-                  statusInt = Integer.parseInt(br.readLine());
-                } catch (NumberFormatException e) {
-                  System.err.println("Неправильный формат числа: " + e.getMessage());
-                }
-                do {
-                  if (statusInt == 1) {
-                    toDoList.get(indexChangeTask - 1).setStatus("to do");
-                    c = true;
-                  } else if (statusInt == 2) {
-                      toDoList.get(indexChangeTask - 1).setStatus("in process");
-                      c = true;
-                    } else if (statusInt == 3) {
-                        toDoList.get(indexChangeTask - 1).setStatus("done");
-                        c = true;
-                      } else {
-                        System.out.print("""
-                            Введите:\s
-                            '1' если задача не начата (status 'to do')
-                            '2' если задача выполняется (status 'in process')
-                            '3' если задача завершена (status 'done')
-                            """);
-                        statusInt = Integer.parseInt(br.readLine());
-                      }
-                } while (!c);*/
       } else {
         System.out.println("""
                      Выберите, какую часть записи изменить:\s
@@ -433,4 +346,4 @@ public class ToDoList {
     } while (!c);
   }
 }
-//
+
