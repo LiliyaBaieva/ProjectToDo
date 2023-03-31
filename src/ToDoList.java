@@ -309,7 +309,7 @@ public class ToDoList {
   }
   private static void statusChange(List<Task> toDoList, int indexChangeTask) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    statusChange(toDoList, indexChangeTask);
+
     System.out.print("""
                     Введите:\s
                     '1' если задача не начата (status 'to do')

@@ -210,7 +210,7 @@ public class Task {
     } while (!c);
 
     Task task = new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
-    System.out.printf("Вы создали новую запись:" + task);
+    System.out.printf("Вы создали новую запись: " + task);
     return new Task(dateOfCreate, taskName, taskDescription, importance, urgent, status);
   }
 

@@ -1,16 +1,22 @@
-import org.junit.jupiter.api.Test;
+/*import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 public class TaskTest {
-  // Проверка, поле имя не пустое
-  // Проверка, поле описание не пустое
-  // Проверка, поле urgent что возвращает "срочная" или "не срочная"
-  // Проверка, поле importance что возвращает "важная" или "не важная"
+  Task task1 = new Task(LocalDate.parse("2023-04-30"), "A", "description", true,
+      false, "to do");
+  Task task2 = new Task(LocalDate.parse("2023-03-30"), "A", "description", true,
+      false, "to do");
 
-
-//  @Test
-
+  @Test
+public void getTaskName_NO_NULL() {
+    
+ expected = getTaskName(task1);
+    assertNotNull(expected);
 
 }
+
+
+}*/
